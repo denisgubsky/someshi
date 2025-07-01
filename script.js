@@ -44,3 +44,43 @@ const ladder = {
 };
 
 ladder.up().down().up().up().showStep();
+
+
+//
+
+
+const back = () => {
+  const take = prompt('enter a one word please');
+  const arr = [];
+
+  if (!isNaN(Number(take))) {
+    alert('word please');
+    return back();
+  }
+
+  for (let i = take.length - 1; i >= 0; i--) arr.push(take[i]);
+
+  alert(arr.join(''));
+};
+
+back();
+
+
+//
+
+
+const foundNums = () => {
+  const take = Number(prompt('enter a num please'));
+  const arr = [];
+
+  if (isNaN(take)) {
+    alert('num please');
+    return foundNums();
+  }
+
+  for (let i = take; i >= 0; i--) arr.push(i);
+
+  console.log(arr.join(' '));
+}
+
+foundNums();
