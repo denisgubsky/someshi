@@ -84,3 +84,29 @@ const foundNums = () => {
 }
 
 foundNums();
+
+
+//
+
+
+const l = 'one, two, three, four, five';
+
+// const remakeMessage = message => {
+//   message = message.split(', ');
+
+//   for (let i = 0; i < message.length; i++) {
+//     message[i] = `${message[i]}#`;
+//   }
+
+//   return message.join(', ');
+// }
+
+const remakeMessage = message => message.split(', ').map(el => el + '#').join(', ');
+
+console.log(remakeMessage(l));
+
+
+//
+
+
+
