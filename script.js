@@ -109,4 +109,28 @@ console.log(remakeMessage(l));
 //
 
 
+const getLocation = (coordinates, commands) => {
+  // const newCoordinates = Object.assign([], coordinates);
+  const newCoordinates = [...coordinates];
 
+  if (newCoordinates.length !== 2) {
+    return 'need x and y coord (2)';
+  }
+
+  for (let i = 0; i < commands.length; i++) {
+    if (commands[i] !== 'forward' && commands[i] !== 'back' && commands[i] !== 'right' && commands[i] !== 'left') {
+      return 'you need to use a "forward" or "back" or "right" or "left" in commands';
+    }
+  }
+
+  for (let i = 0; i < commands.length; i++) {
+    if (commands[i] === 'forward') newCoordinates[1]++;
+    if (commands[i] === 'back') newCoordinates[1]--;
+    if (commands[i] === 'right') newCoordinates[0]++;
+    if (commands[i] === 'left') newCoordinates[0]--;
+  }
+
+  return newCoordinates;
+};
+
+console.log(getLocation([2, 3], ['back', 'back', 'back', 'right']));
