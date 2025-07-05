@@ -134,3 +134,44 @@ const getLocation = (coordinates, commands) => {
 };
 
 console.log(getLocation([2, 3], ['back', 'back', 'back', 'right']));
+
+
+//
+
+
+const users = [
+  {
+    name: 'Lal',
+    age: 40,
+  },
+  {
+    name: 'La',
+    age: 30,
+  },
+  {
+    name: 'Lada',
+    age: 100,
+  },
+  {
+    name: 'Lada',
+    age: 100,
+  },
+];
+
+// const avgAgeLada = array => {
+//   let sum = 0;
+//   let count = 0;
+
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i].name === 'Lada') {
+//       sum += array[i].age;
+//       count++;
+//     }
+//   }
+
+//   return sum / count;
+// };
+
+const avgAgeLada = array => array.filter(el => el.name === 'Lada').reduce((sum, el) => sum += el.age, 0) / array.filter(el => el.name === 'Lada').length;
+
+console.log(avgAgeLada(users));
