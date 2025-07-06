@@ -175,3 +175,23 @@ const users = [
 const avgAgeLada = array => array.filter(el => el.name === 'Lada').reduce((sum, el) => sum += el.age, 0) / array.filter(el => el.name === 'Lada').length;
 
 console.log(avgAgeLada(users));
+
+
+//
+
+
+const user = {
+  name: 'weer',
+  age: 50,
+  city: 'qcity',
+};
+
+const userEntries = Object.entries(user);
+
+const userEntriesFormatted = userEntries.map(el => [`##${el[0]}##`, `##${el[1]}##`]);
+
+console.log(userEntriesFormatted);
+
+const userFromEntries = Object.fromEntries(userEntriesFormatted);
+
+console.log(userFromEntries);
