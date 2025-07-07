@@ -27,6 +27,25 @@ alert(calculator.mul());
 //
 
 
+const user1 = { name: 'q' };
+
+const user2 = { name: 'w' };
+
+function logInfo() {
+  console.log(this);
+  console.log(this.name);
+}
+
+user1.logName = logInfo;
+user2.logName = logInfo;
+
+user1.logName();
+user2.logName();
+
+
+//
+
+
 const ladder = {
   step: 0,
   up() {
