@@ -191,7 +191,7 @@ const users = [
 //   return sum / count;
 // };
 
-const avgAgeLada = array => array.filter(el => el.name === 'Lada').reduce((sum, el) => sum += el.age, 0) / array.filter(el => el.name === 'Lada').length;
+const avgAgeLada = array => array.filter(el => el.name === 'Lada').reduce((sum, el) => sum + el.age, 0) / array.filter(el => el.name === 'Lada').length;
 
 console.log(avgAgeLada(users));
 
