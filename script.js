@@ -267,3 +267,53 @@ console.log(firstJavaScriptDeveloper);
 firstJavaScriptDeveloper.logName();
 firstJavaScriptDeveloper.logAge();
 firstJavaScriptDeveloper.logExperience();
+
+
+//
+
+
+const logMessage = (userName, userAge) => alert(`hello my name is ${userName} im ${userAge}`);
+
+const timerId = setTimeout(logMessage, 2000, 'george', 40);
+
+// clearTimeout(timerId);
+
+
+//
+
+
+const intervalId = setInterval(() => console.log('hello'), 1000);
+
+setTimeout(() => clearInterval(intervalId), 5000);
+
+
+//
+
+
+const connect = () => {
+  const firstArg = Number(prompt('enter start number'));
+  const secondArg = Number(prompt('enter end number'));
+  const thirdArg = Number(prompt('enter interval in ms'));
+
+  const something = (numFrom, numTo, secondsInterval) => {
+    if (isNaN(numFrom) || isNaN(numTo) || isNaN(secondsInterval)) {
+      alert('only numbers in arguments please');
+      return connect();
+    }
+    
+    let num = numFrom;
+
+    const intervalId = setInterval(() => {
+      console.log(num);
+      num++;
+
+      if (num > numTo) {
+        clearInterval(intervalId);
+      }
+    }, secondsInterval);
+  };
+
+  something(firstArg, secondArg, thirdArg);
+};
+
+connect();
