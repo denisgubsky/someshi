@@ -290,30 +290,26 @@ setTimeout(() => clearInterval(intervalId), 5000);
 //
 
 
-const connect = () => {
-  const firstArg = Number(prompt('enter start number'));
-  const secondArg = Number(prompt('enter end number'));
-  const thirdArg = Number(prompt('enter interval in ms'));
+const startCounter = () => {
+  const numFrom = Number(prompt('enter start number'));
+  const numTo = Number(prompt('enter end number'));
+  const msInterval = Number(prompt('enter interval in ms'));
 
-  const something = (numFrom, numTo, secondsInterval) => {
-    if (isNaN(numFrom) || isNaN(numTo) || isNaN(secondsInterval)) {
-      alert('only numbers in arguments please');
-      return connect();
-    }
-    
-    let num = numFrom;
+  if (isNaN(numFrom) || isNaN(numTo) || isNaN(msInterval)) {
+    alert('only numbers in arguments please');
+    return startCounter();
+  }
 
-    const intervalId = setInterval(() => {
-      console.log(num);
-      num++;
+  if (numFrom >= numTo) return startCounter();
 
-      if (num > numTo) {
-        clearInterval(intervalId);
-      }
-    }, secondsInterval);
-  };
+  let num = numFrom;
 
-  something(firstArg, secondArg, thirdArg);
+  const intervalId = setInterval(() => {
+    console.log(num);
+    num++;
+
+    if (num > numTo) clearInterval(intervalId);
+  }, msInterval);
 };
 
-connect();
+startCounter();
