@@ -296,7 +296,7 @@ const startCounter = () => {
   const msInterval = Number(prompt('enter interval in ms'));
 
   if (isNaN(numFrom) || isNaN(numTo) || isNaN(msInterval)) {
-    alert('only numbers in arguments please');
+    alert('only numbers please');
     return startCounter();
   }
 
