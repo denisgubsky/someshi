@@ -214,3 +214,56 @@ console.log(userEntriesFormatted);
 const userFromEntries = Object.fromEntries(userEntriesFormatted);
 
 console.log(userFromEntries);
+
+
+//
+
+
+class Person {
+  static planet = 'Earth';
+  country = 'USA';
+
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  logName() {
+    console.log(this.name);
+  }
+}
+
+const firstPersonExample = new Person('georg', 40);
+
+console.log(firstPersonExample);
+
+class Developer extends Person {
+  logAge() {
+    console.log(this.age);
+  }
+}
+
+const firstDeveloperExample = new Developer('hloe', 35);
+
+console.log(firstDeveloperExample);
+
+class JavaScriptDeveloper extends Developer {
+  country = 'germany';
+
+  constructor(name, age, experience) {
+    super(name, age);
+    this.experience = experience;
+  }
+
+  logExperience() {
+    console.log(this.experience);
+  }
+}
+
+const firstJavaScriptDeveloper = new JavaScriptDeveloper('john', 45, 5);
+
+console.log(firstJavaScriptDeveloper);
+
+firstJavaScriptDeveloper.logName();
+firstJavaScriptDeveloper.logAge();
+firstJavaScriptDeveloper.logExperience();
