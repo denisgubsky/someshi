@@ -1,29 +1,27 @@
-class AllShi {
-  static calculator = {
-    read() {
-      this.a = Number(prompt('enter first num please', 0));
-      if (isNaN(this.a)) {
-        alert('Enter a NUMBER, please.');
-        return this.read();
-      }
-      this.b = Number(prompt('enter second num please', 0));
-      if (isNaN(this.b)) {
-        alert('Enter a NUMBER, please.');
-        return this.read();
-      }
-    },
-    sum() {
-      return this.a + this.b;
-    },
-    mul() {
-      return this.a * this.b;
-    },
-  };
-}
+const calculator = {
+  read() {
+    this.a = Number(prompt('enter first num please', 0));
+    if (isNaN(this.a)) {
+      alert('Enter a NUMBER, please.');
+      return this.read();
+    }
+    this.b = Number(prompt('enter second num please', 0));
+    if (isNaN(this.b)) {
+      alert('Enter a NUMBER, please.');
+      return this.read();
+    }
+  },
+  sum() {
+    return this.a + this.b;
+  },
+  mul() {
+    return this.a * this.b;
+  },
+};
 
-AllShi.calculator.read();
-alert(AllShi.calculator.sum());
-alert(AllShi.calculator.mul());
+calculator.read();
+alert(calculator.sum());
+alert(calculator.mul());
 
 
 //
