@@ -313,3 +313,11 @@ const startCounter = () => {
 };
 
 startCounter();
+
+
+//
+
+
+const giveCandy = (callback, something) => callback(something);
+
+giveCandy(result => console.log(result), 0);
