@@ -321,3 +321,19 @@ startCounter();
 const giveCandy = (callback, something) => callback(something);
 
 giveCandy(result => console.log(result), 0);
+
+
+//
+
+
+// const transformObject = obj => {
+//   const objEntries = Object.entries(obj);
+//   const objEntriesEdited = objEntries.map((el) => [el[0].toUpperCase(), el[1]]);
+//   return Object.fromEntries(objEntriesEdited);
+// };
+
+// console.log(transformObject({ name: 'john', age: 30 }));
+
+const transformObject = obj => Object.fromEntries(Object.entries(obj).map((el) => [el[0].toUpperCase(), el[1]]));
+
+console.log(transformObject({ name: 'george', age: 30 }));
